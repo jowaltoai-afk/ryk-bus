@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>RYK Electric Bus — Rahim Yar Khan Bus Timings & Routes</title>
+<meta name="description" content="PTC Electric Bus Rahim Yar Khan timings: all 4 routes from GBS to Abu Dhabi Palace, Sadiqabad, Kot Samba & Lala Chowk. Nearest stop, planner, alarms, offline. Free.">
+<meta name="theme-color" content="#0b6e4f">
+<meta property="og:title" content="RYK Electric Bus — Rahim Yar Khan Bus Timings & Routes">
+<meta property="og:description" content="PTC Electric Bus Rahim Yar Khan timings: all 4 routes from GBS to Abu Dhabi Palace, Sadiqabad, Kot Samba & Lala Chowk. Nearest stop, planner, alarms, offline. Free.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rykbus.dpdns.org/">
+<meta property="og:image" content="https://rykbus.dpdns.org/og-image.jpg">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1081">
+<meta property="og:image:alt" content="RYK Electric Bus — Rahim Yar Khan bus timings, routes and stops">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://rykbus.dpdns.org/og-image.jpg">
+<link rel="canonical" href="https://rykbus.dpdns.org/">
+<meta name="keywords" content="RYK Electric Bus, Rahim Yar Khan electric bus, PTC Electric Bus, RYK bus timings, Rahim Yar Khan bus routes, GBS Rahim Yar Khan, Abu Dhabi Palace bus, Sadiqabad bus, Kot Samba bus, Lala Chowk bus, eTransit Punjab">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"RYK Electric Bus","applicationCategory":"TravelApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"PKR"},"author":{"@type":"Organization","name":"StopWala Technologies"},"inLanguage":["en","ur"],"description":"PTC Electric Bus Rahim Yar Khan timings: all 4 routes from GBS to Abu Dhabi Palace, Sadiqabad, Kot Samba & Lala Chowk. Nearest stop, planner, alarms, offline. Free."}</script>
+<!-- GA4 (web-only): gtag.js loads + config fires ONLY on the real website host.
+     The same files are bundled inside the Android app (appassets/local origin),
+     so app usage never pollutes website analytics. Async + wrapped in try/catch
+     so it never blocks rendering and fails silently offline. -->
+<script>
+(function(){try{
+var h=location.hostname;
+if(h!=="rykbus.dpdns.org"&&h!=="www.rykbus.dpdns.org")return;
+window.dataLayer=window.dataLayer||[];
+window.gtag=function(){window.dataLayer.push(arguments);};
+window.gtag("js",new Date());
+window.gtag("config","G-5K8GK2FSLQ");
+var s=document.createElement("script");
+s.async=true;
+s.src="https://www.googletagmanager.com/gtag/js?id=G-5K8GK2FSLQ";
+(document.head||document.documentElement).appendChild(s);
+}catch(e){/* analytics must never break the app */}})();
+</script>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<!-- Leaflet loads on first map use (app.js ensureLeaflet) — keeps first paint fast -->
+<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="splash-bus-b.webp">
+<link rel="preload" as="image" href="splash-wheel-b1.webp">
+<link rel="preload" as="image" href="splash-wheel-b2.webp">
+<!-- v2.4: branded splash — critical CSS inlined so the first paint is already the splash (no white flash, no FOUC) -->
+<style>
+html{background:#0B6E35}
+#splash{position:fixed;inset:0;z-index:200;overflow:hidden;background:linear-gradient(180deg,#0A5C2C 0%,#0B6E35 42%,#177A41 100%);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased}
+#splash.spl-out{opacity:0;transition:opacity .22s ease;pointer-events:none}
+.spl-pattern{position:absolute;left:0;right:0;top:0;height:62%;opacity:.055;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Crect x='14' y='38' width='34' height='14' rx='4'/%3E%3Ccircle cx='22' cy='54' r='3'/%3E%3Ccircle cx='40' cy='54' r='3'/%3E%3Cpath d='M66 30 q10 -12 22 -6 q-6 12 -18 10 q-2 -2 -4 -4z'/%3E%3C/g%3E%3C/svg%3E");background-size:96px 96px;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 55%,transparent 100%)}
+.spl-badge-wrap{position:absolute;top:15%;left:50%;transform:translateX(-50%);width:150px;height:150px}
+.spl-pulse{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.35);animation:splPulse 1.7s ease-out .15s infinite}
+.spl-pulse.p2{animation-delay:.95s}
+@keyframes splPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.65);opacity:0}}
+.spl-badge{position:absolute;inset:11px;border-radius:50%;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.38);box-shadow:0 10px 30px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
+.spl-badge svg{width:92px;height:92px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+.spl-word{position:absolute;top:38%;left:0;right:0;text-align:center;z-index:3}
+.spl-reveal{display:block}
+.spl-reveal>span{display:block}
+.spl-wryk{font-size:66px;font-weight:800;letter-spacing:3px;color:#fff;line-height:1.05}
+.spl-wel{font-size:31px;font-weight:700;letter-spacing:1px;color:#FFC727;line-height:1.2;margin-top:2px}
+.spl-tag{margin-top:14px;font-size:15px;letter-spacing:.4px;color:rgba(255,255,255,.78)}
+.spl-scene{position:absolute;left:0;right:0;bottom:0;height:300px;z-index:1;pointer-events:none}
+.spl-road{position:absolute;left:0;right:0;bottom:0;height:104px;background:#07331A}
+.spl-dashes{position:absolute;left:0;bottom:62px;width:calc(100% + 390px);height:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 26px,transparent 26px 52px);animation:splDashMove 3.2s forwards}
+/* v2.6: ground scroll is synced to the bus crossing — it moves fast mid-crossing
+   and eases to a stop exactly as the bus parks (fill-mode holds the last frame). */
+@keyframes splDashMove{
+ 0%{transform:translateX(0);animation-timing-function:cubic-bezier(.45,0,.6,.35)}
+ 20%{transform:translateX(-80px);animation-timing-function:linear}
+ 82%{transform:translateX(-330px);animation-timing-function:cubic-bezier(.3,.55,.45,1)}
+ 100%{transform:translateX(-390px)}
+}
+/* v2.6: the bus CROSSES the scene over the full 3.2s brand window — nose enters
+   from the left, gentle ease-in, steady cruise, ease-out, then parks with its
+   front near the right edge (fill-mode holds it there until the gate reveals). */
+.spl-buswrap{position:absolute;left:0;bottom:52px;width:min(66%,300px);animation:splCross 3.2s forwards}
+@keyframes splCross{
+ 0%{transform:translateX(-68vw);animation-timing-function:cubic-bezier(.45,0,.6,.35)}
+ 20%{transform:translateX(6vw);animation-timing-function:linear}
+ 82%{transform:translateX(calc(92vw - min(66vw,300px)));animation-timing-function:cubic-bezier(.3,.55,.45,1)}
+ 100%{transform:translateX(calc(95vw - min(66vw,300px)))}
+}
+.spl-wheelimg{position:absolute;border-radius:50%;animation:splWheels 3.2s forwards;pointer-events:none}
+.spl-bob{animation:splBob 1.6s ease-in-out infinite}
+/* subtle bounce, cruising or parked (reads as idle once the bus has stopped) */
+@keyframes splBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5px)}}
+.spl-wheel{transform-box:fill-box;transform-origin:center;animation:splWheels 3.2s forwards}
+/* v2.6: wheels spin with the same speed profile as the crossing, then STOP
+   exactly when the bus parks (single 3.2s run — no infinite spin). */
+@keyframes splWheels{
+ 0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(.45,0,.6,.35)}
+ 20%{transform:rotate(440deg);animation-timing-function:linear}
+ 82%{transform:rotate(1960deg);animation-timing-function:cubic-bezier(.3,.55,.45,1)}
+ 100%{transform:rotate(2230deg)}
+}
+.spl-dots{position:absolute;left:0;right:0;bottom:196px;display:flex;justify-content:center;gap:12px}
+.spl-dots i{width:9px;height:9px;border-radius:50%;background:#fff;animation:splDot 1.2s ease-in-out infinite}
+.spl-dots i:nth-child(2){animation-delay:.2s}
+.spl-dots i:nth-child(3){animation-delay:.4s}
+@keyframes splDot{0%,60%,100%{transform:scale(.55);opacity:.35}30%{transform:scale(1);opacity:1}}
+.spl-status{position:absolute;left:0;right:0;bottom:168px;text-align:center;font-size:11px;letter-spacing:.8px;color:rgba(255,255,255,.9);z-index:2}
+.spl-status span{background:rgba(6,42,22,.55);border:1px solid rgba(255,255,255,.16);padding:5px 16px;border-radius:20px}
+.spl-fine{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:11.5px;letter-spacing:1.6px;color:rgba(255,255,255,.72);z-index:2}
+/* hero bus sizing lives INLINE too — a stale cached style.css must never let it render at natural size */
+.heroScene .heroBusWrap{position:absolute;right:0;bottom:1%;width:58%;opacity:0;filter:drop-shadow(0 5px 8px rgba(0,0,0,.3))}.heroBusWrap.go{animation:busIn 11s cubic-bezier(.3,.55,.35,1) both}.heroBusImg{display:block;width:100%}.heroWheel{position:absolute;width:10.32%;pointer-events:none}.hwA{left:68.73%;top:68.02%}.hwB{left:18.56%;top:68.31%}body.ur .hwA{left:20.95%}body.ur .hwB{left:71.22%}.heroBusWrap.go .heroWheel{animation:heroWheelSpin 2.75s linear 4}body.ur .heroBusWrap.go .heroWheel{animation-name:heroWheelSpinUr}@keyframes heroWheelSpin{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}@keyframes heroWheelSpinUr{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes busIn{from{transform:translateX(115%);opacity:0}5%{opacity:1}to{transform:translateX(0);opacity:1}}
+body.ur .heroScene .heroBusWrap{transform:scaleX(-1)}body.ur .heroBusImg{content:url("bus-illus-r.webp")}body.ur .heroBusWrap.go{animation-name:busInUr}@keyframes busInUr{from{transform:scaleX(-1) translateX(-115%);opacity:0}5%{opacity:1}to{transform:scaleX(-1) translateX(0);opacity:1}}
+</style>
+</head>
+<body>
+<!-- v2.4: branded splash + sync gate — first paint; removed by the gate in app.js -->
+<div id="splash" aria-hidden="true">
+  <div class="spl-pattern"></div>
+  <div class="spl-badge-wrap">
+    <div class="spl-pulse"></div><div class="spl-pulse p2"></div>
+    <div class="spl-badge">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="256" cy="408" rx="142" ry="18" fill="#07331A" opacity=".45"/>
+        <rect x="92" y="218" width="18" height="14" fill="#07331A"/>
+        <rect x="402" y="218" width="18" height="14" fill="#07331A"/>
+        <rect x="64" y="194" width="32" height="60" rx="14" fill="#FFFFFF"/>
+        <rect x="416" y="194" width="32" height="60" rx="14" fill="#FFFFFF"/>
+        <rect x="106" y="140" width="300" height="250" rx="58" fill="#FFFFFF"/>
+        <circle cx="162" cy="160" r="8" fill="#FFC727"/>
+        <circle cx="350" cy="160" r="8" fill="#FFC727"/>
+        <rect x="124" y="158" width="264" height="150" rx="26" fill="#0B6E35"/>
+        <rect x="134" y="168" width="244" height="130" rx="20" fill="#DDF0DF"/>
+        <text x="256" y="264" text-anchor="middle" font-family="'Noto Sans Display','Arial Black',system-ui,sans-serif" font-weight="900" font-size="78" fill="#0B6E35" stroke="#0B6E35" stroke-width="5" paint-order="stroke" textLength="206" lengthAdjust="spacingAndGlyphs">RYK</text>
+        <rect x="126" y="330" width="62" height="42" rx="20" fill="#FFEFB0" stroke="#FFC727" stroke-width="5"/>
+        <rect x="324" y="330" width="62" height="42" rx="20" fill="#FFEFB0" stroke="#FFC727" stroke-width="5"/>
+        <rect x="206" y="326" width="100" height="50" rx="16" fill="#0B6E35"/>
+        <path d="M264,331 L243,355 L255,355 L249,373 L269,349 L257,349 Z" fill="#FFC727"/>
+      </svg>
+    </div>
+  </div>
+  <div class="spl-word">
+    <div class="spl-reveal"><span class="spl-wryk">RYK</span></div>
+    <div class="spl-reveal"><span class="spl-wel">Electric Bus</span></div>
+    <div class="spl-tag">Rahim Yar Khan&#8217;s own bus service</div>
+  </div>
+  <div class="spl-scene">
+    <div class="spl-road"></div>
+    <div class="spl-dashes"></div>
+    <div class="spl-buswrap"><div style="position:relative">
+      <img src="splash-bus-b.webp" alt="" draggable="false" style="width:100%;display:block" width="544" height="184">
+      <img class="spl-wheelimg" src="splash-wheel-b1.webp" alt="" draggable="false" style="left:20.95%;top:68.02%;width:10.32%" width="56" height="56">
+      <img class="spl-wheelimg" src="splash-wheel-b2.webp" alt="" draggable="false" style="left:71.22%;top:68.31%;width:10.22%" width="56" height="56">
+    </div></div>
+    <div class="spl-dots"><i></i><i></i><i></i></div>
+    <div class="spl-status"><span id="splStatusTx">Checking timings&#8230;</span></div>
+    <div class="spl-fine">PTC ELECTRIC BUS &nbsp;&bull;&nbsp; RAHIM YAR KHAN</div>
+  </div>
+</div>
+<script>
+// v2.4: first-paint status line in the SAVED language (app.js takes over cycling later).
+// Keep these 9 strings in sync with the splash gate in app.js.
+try{var __sl=localStorage.getItem("ryk-lang")||"en";
+var __st={en:["Checking timings\u2026","Looking for updates\u2026","Getting ready\u2026"],
+ur:["\u0627\u0648\u0642\u0627\u062a \u0686\u06cc\u06a9 \u06c1\u0648 \u0631\u06c1\u06d2 \u06c1\u06cc\u06ba\u2026","\u0627\u067e \u0688\u06cc\u0679\u0633 \u062f\u06cc\u06a9\u06be\u06cc \u062c\u0627 \u0631\u06c1\u06cc \u06c1\u06cc\u06ba\u2026","\u062a\u06cc\u0627\u0631 \u06c1\u0648 \u0631\u06c1\u0627 \u06c1\u06d2\u2026"],
+rom:["Timings check ho rahi hain\u2026","Updates dekhe ja rahe hain\u2026","Tayyar ho rahe hain\u2026"]};
+var __t=__st[__sl]||__st.en;window.__splT=__t;
+var __sx=document.getElementById("splStatusTx");
+if(__sx){__sx.textContent=__t[0];if(__sl==="ur")__sx.setAttribute("dir","rtl");}
+}catch(e){window.__splT=["Checking timings\u2026","Looking for updates\u2026","Getting ready\u2026"];}
+</script>
+<!-- v86: custom line-icon set (inline sprite, offline/APK-safe) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+  <!-- RYK Electric Bus — custom line icon set. 24px grid, 1.8px stroke, round caps/joins.
+       Use: <svg class="ic" aria-hidden="true"><use href="icons.svg#i-search"/></svg>
+       .ic{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round} -->
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.3 16.3L21 21"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4.5L3.8 6.3v13.2L9 17.7l6 1.8 5.2-1.8V4.5L15 6.3 9 4.5z"/><path d="M9 4.5v13.2M15 6.3v13.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.2S5.2 14.9 5.2 10a6.8 6.8 0 0 1 13.6 0c0 4.9-6.8 11.2-6.8 11.2z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.8 3.8v3.9h-3.9"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9.5v5h3.8L12.5 19V5L7.8 9.5H4z"/><path d="M15.8 9.2a4 4 0 0 1 0 5.6"/><path d="M18.3 6.8a7.4 7.4 0 0 1 0 10.4"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5v5h3.8L12.5 19V5L7.8 9.5H4z"/><path d="M16.2 9.8l4.6 4.6M20.8 9.8l-4.6 4.6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.7l2.55 5.2 5.75.85-4.15 4.05.97 5.7L12 16.9l-5.12 2.6.97-5.7L3.7 9.75l5.75-.85z"/></symbol>
+  <symbol id="i-starf" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3.7l2.55 5.2 5.75.85-4.15 4.05.97 5.7L12 16.9l-5.12 2.6.97-5.7L3.7 9.75l5.75-.85z"/></symbol>
+  <symbol id="i-alarm" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="6.3"/><path d="M9.8 13.5l1.7 1.7 3-3.4"/><path d="M5.9 4.9L4 6.8M18.1 4.9l1.9 1.9"/><path d="M9.3 18.9L7 21.2M14.7 18.9l2.3 2.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.8 12.6l4.8 4.8L19.2 7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.2 6.2l11.6 11.6M17.8 6.2L6.2 17.8"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9.5 5.5L16 12l-6.5 6.5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.2L12 4l8 7.2"/><path d="M6.2 9.6V20h11.6V9.6"/><path d="M10.2 20v-4.8h3.6V20"/></symbol>
+  <symbol id="i-routes" viewBox="0 0 24 24"><path d="M7.5 20L10.8 4M16.5 20L13.2 4"/><path d="M12 7v2M12 11.2v2M12 15.4v2"/></symbol>
+  <symbol id="i-planner" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M15.3 8.7l-2.1 4.5-4.5 2.1 2.1-4.5z"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3.5 10.8v3.4l3.8.9v-5.2l-3.8.9z"/><path d="M7.3 9.9L18.5 6v12L7.3 14.1"/><path d="M9.8 15.4v3.4a1.6 1.6 0 0 0 3.2 0v-2.9"/><path d="M20.3 9.3a4.2 4.2 0 0 1 0 5.4"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.4"/><circle cx="12" cy="12" r="3.1"/><g><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(45 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(90 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(135 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(180 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(225 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(270 12 12)"/><rect x="18.4" y="10.85" width="2.5" height="2.3" rx="0.7" transform="rotate(315 12 12)"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M21 16.5v2.6a2 2 0 0 1-2.2 2A19.5 19.5 0 0 1 2.6 4.9 2 2 0 0 1 4.6 2.7h2.6a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 10.6a16 16 0 0 0 6 6l1.3-1.35a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2"/><path d="M12 3.4c2.4 2.3 3.7 5.2 3.7 8.6s-1.3 6.3-3.7 8.6c-2.4-2.3-3.7-5.2-3.7-8.6S9.6 5.7 12 3.4z"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 7.5h16V10a2 2 0 0 0 0 4v2.5H4V14a2 2 0 0 0 0-4z"/><path d="M14.8 7.6v1.6M14.8 14.8v1.6" stroke-dasharray="0.1 2.5"/></symbol>
+  <symbol id="i-dlphone" viewBox="0 0 24 24"><rect x="7.5" y="2.8" width="9" height="18.4" rx="2.2"/><path d="M12 7.5v5.5M9.9 10.9l2.1 2.1 2.1-2.1"/><path d="M10.8 18.2h2.4"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6.3" cy="12" r="2.6"/><circle cx="17.7" cy="5.8" r="2.6"/><circle cx="17.7" cy="18.2" r="2.6"/><path d="M8.6 10.7l6.8-3.7M8.6 13.3l6.8 3.7"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.8" y="6" width="18.4" height="12.5" rx="2.4"/><path d="M2.8 10.3h18.4"/><path d="M6.3 14.8h4.2"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3.5h6.8L17 7.7V20.5H6z"/><path d="M12.8 3.5v4.2H17"/><path d="M9 12.6h6M9 15.8h6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10.5" width="13" height="9.8" rx="2.2"/><path d="M8.4 10.5V8a3.6 3.6 0 0 1 7.2 0v2.5"/><circle cx="12" cy="15.2" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4.5" y="3.2" width="15" height="14.2" rx="2.6"/><path d="M4.5 10.8h15"/><circle cx="8.4" cy="19.4" r="1.7"/><circle cx="15.6" cy="19.4" r="1.7"/><path d="M8.2 6.4h7.6"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 4.5V19M8 4.5L5.2 7.3M8 4.5l2.8 2.8"/><path d="M16 19.5V5M16 19.5l-2.8-2.8M16 19.5l2.8-2.8"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3.6L21.6 20H2.4z"/><path d="M12 9.6v4.4"/><circle cx="12" cy="16.9" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="2.8" y="7.3" width="18.4" height="9.6" rx="2"/><circle cx="12" cy="12.1" r="2.7"/><path d="M6.2 10.2v.1M17.8 14v.1"/></symbol>
+  <symbol id="i-locate" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M12 2.6v2.8M12 18.6v2.8M2.6 12h2.8M18.6 12h2.8"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13.2" cy="4.4" r="1.9"/><path d="M13 7v5.2"/><path d="M13 8.6l-3.4 2.2M13 8.6l3.2 1.7"/><path d="M13 12.2l-3 3.3-1.3 4.5M13 12.2l2.7 3 1.5 4.8"/></symbol>
+  <symbol id="i-late" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.6 2.1"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M6 6l12 12"/></symbol>
+  <symbol id="i-crowd" viewBox="0 0 24 24"><circle cx="9" cy="8.8" r="3"/><circle cx="16.6" cy="9.8" r="2.4"/><path d="M3.4 19.2c.6-3.2 2.8-4.8 5.6-4.8s5 1.6 5.6 4.8"/><path d="M14.6 14.6c2.5.3 4.2 1.7 4.7 4"/></symbol>
+  <symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8 12.4l2.8 2.8 5.4-6.4"/></symbol>
+</svg>
+<!-- v60: slim download bar above header (dismissible, web-only) -->
+<div id="dlBar" hidden><span class="dlTxt"><svg class="ic" aria-hidden="true"><use href="#i-dlphone"/></svg> <span data-i18n="dlBarT">Get the full app — voice, alarms & updates</span></span><button id="dlBarBtn" class="dlPill" data-i18n="install">Download App</button><button id="dlBarX" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+<header>
+  <!-- v85: announcement moved to the very top of the header (below the Download-App bar), above the logo row -->
+  <div id="ticker" aria-hidden="true"><span class="tkIco"><svg class="ic" aria-hidden="true"><use href="#i-mega"/></svg></span><span id="tkTxt"></span></div>
+  <div class="headRow">
+  <div class="brand"><img src="app-icon.svg" class="logoApp" alt="RYK Bus logo" width="512" height="512"><h1>RYK Electric Bus</h1></div>
+  <div class="hbtns">
+    <button id="langPill" class="langPill" aria-label="Language"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg> <span id="langPillTx">English</span></button>
+  </div>
+  </div>
+  <!-- v84: search moved into the home hero (C6); header keeps announcement + logo row only -->
+</header>
+
+<main>
+  <!-- HOME — redesigned 2026-10-17: nearest stop first, buses from this stop, nearby stops -->
+  <section id="view-home" class="view active">
+    <div class="heroWrap">
+      <div class="heroInner">
+        <!-- v84: C6 — search lives in the hero top (Home only) -->
+        <div class="goSearchWrap">
+          <div class="goSearchBar">
+            <input id="goSearch" type="text" autocomplete="off" autocapitalize="off" data-i18n-ph="goSearchPh" placeholder="Where do you want to go?">
+            <button id="goClear" type="button" aria-label="Clear search" hidden><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+            <button class="goBtn" id="goFocusBtn" type="button" aria-label="Search" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></button>
+          </div>
+          <div id="goDrop" class="goDrop" hidden></div>
+        </div>
+        <p class="heroLabel" id="heroLabel">Your Nearest Stop</p>
+        <div class="heroNameRow">
+          <h2 class="heroStop" id="heroStop"></h2>
+          <button class="gpsIconBtn" id="gpsIconBtn" type="button" aria-label="Nearest" title="Nearest"><span class="gIco" aria-hidden="true"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg></span></button>
+        </div>
+        <p class="heroMeta" id="heroMeta"></p>
+        <div class="heroBtns">
+          <button class="changeBtn" id="changeStopBtn"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg> <span data-i18n="changeStop">Change Stop</span></button>
+          <a class="mapIconBtn" id="mapStopBtn" href="#" target="_blank" rel="noopener" aria-label="Map" hidden><svg class="ic" aria-hidden="true"><use href="#i-map"/></svg></a>
+        </div>
+      </div>
+      <style>
+.heroWrap{padding-bottom:96px}.heroScene{bottom:64px}.heroAnim{display:none}
+.heroAnim{position:absolute;left:0;right:0;bottom:56px;height:118px;overflow:hidden;pointer-events:none;z-index:1}
+.heroAnim .road{position:absolute;left:0;right:0;bottom:0;height:44px;background:#07331A}
+.heroAnim .road::before{content:"";position:absolute;left:0;right:0;top:20px;height:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 26px,transparent 26px 52px)}
+.heroAnim .shelter{position:absolute;right:1.5%;bottom:36px;width:47%}
+.heroAnim .drive{position:absolute;bottom:3px;width:37%;animation:heroDrive 9s linear infinite}
+@keyframes heroDrive{0%{left:-42%}70%{left:104%}100%{left:104%}}
+.heroAnim .drive .busWrap{position:relative}
+.heroAnim .drive .wheel{position:absolute;border-radius:50%;animation:heroSpin .8s linear infinite}
+@keyframes heroSpin{to{transform:rotate(360deg)}}
+</style>
+<div class="heroScene" aria-hidden="true">
+<svg viewBox="0 0 340 120" fill="none" aria-hidden="true">
+<ellipse cx="268" cy="14" rx="20" ry="6.5" fill="#FFFFFF" opacity=".18"/>
+<ellipse cx="308" cy="9" rx="13" ry="5" fill="#FFFFFF" opacity=".13"/>
+<g fill="#DFF5E6" opacity=".30">
+<rect x="2" y="74" width="22" height="38" rx="3"/>
+<rect x="30" y="58" width="15" height="54" rx="3"/>
+<rect x="51" y="80" width="26" height="32" rx="3"/>
+<rect x="83" y="66" width="17" height="46" rx="3"/>
+<rect x="106" y="86" width="30" height="26" rx="3"/>
+<rect x="142" y="76" width="14" height="36" rx="3"/>
+</g>
+<rect x="0" y="112" width="340" height="3" fill="#FFFFFF" opacity=".20"/>
+<g fill="#FFFFFF" opacity=".8"><rect x="6" y="112" width="26" height="3"/><rect x="58" y="112" width="26" height="3"/><rect x="110" y="112" width="26" height="3"/><rect x="162" y="112" width="26" height="3"/><rect x="214" y="112" width="26" height="3"/><rect x="266" y="112" width="26" height="3"/></g>
+<rect x="132" y="74" width="4" height="38" fill="#0B3D2E" opacity=".5"/>
+<rect x="118" y="50" width="32" height="24" rx="4" fill="#EAF7EE" opacity=".95"/>
+<rect x="126" y="58" width="16" height="9" rx="2" fill="#0B6E35"/>
+</svg>
+<div class="heroBusWrap"><img class="heroBusImg" src="bus-illus.webp" alt="" width="344" height="116"><img class="heroWheel hwA" src="wheel-illus-b1.webp" alt="" width="36" height="36"><img class="heroWheel hwB" src="wheel-illus-b2.webp" alt="" width="36" height="36"></div>
+</div>
+<div class="heroAnim" aria-hidden="true">
+  <div class="road"></div>
+  <img class="shelter" src="shelter.webp" alt="" draggable="false" width="480" height="220">
+  <div class="drive"><div class="busWrap">
+    <img src="splash-bus-b.webp" alt="" draggable="false" style="width:100%;display:block" width="544" height="184">
+    <img class="wheel" src="splash-wheel-b1.webp" alt="" draggable="false" style="left:20.95%;top:68.02%;width:10.32%" width="56" height="56">
+    <img class="wheel" src="splash-wheel-b2.webp" alt="" draggable="false" style="left:71.22%;top:68.31%;width:10.22%" width="56" height="56">
+  </div></div>
+</div>
+    </div>
+
+    <div class="card busesCard" id="busesCard" hidden>
+      <div class="busesHead">
+        <h3 data-i18n="busesFromStop">Buses from this stop</h3>
+        <button class="lsnBtn" id="busesListen"><span id="busesListenTx" data-i18n="listenBtn"><svg class="ic" aria-hidden="true"><use href="#i-sound"/></svg> Listen</span></button>
+      </div>
+      <div id="busesRows"></div>
+      <div id="leaveWrap" hidden>
+        <p class="leaveHint" id="leaveHint"></p>
+        <div class="leaveRow"><button class="favBtn" id="leaveAlarmBtn"></button><button id="leaveAlarmCancel" hidden></button></div>
+      </div>
+    </div>
+
+    <div class="nearbyWrap" id="nearbyWrap" hidden>
+      <div class="nearbyHead"><h3 data-i18n="nearbyH">Nearby Stops</h3><button class="seeAll" id="seeAllBtn"><span data-i18n="seeAll">See All</span> ›</button></div>
+      <div class="nearbyRow" id="nearbyRow"></div>
+    </div>
+
+    <div class="fareStrip" id="fareStrip" data-i18n="fareStrip"><svg class="ic" aria-hidden="true"><use href="#i-ticket"/></svg> Fare Rs 20 — Students, Senior Citizens &amp; Special Persons FREE</div>
+
+    <div class="card" id="favCard" hidden>
+      <h3><svg class="ic" aria-hidden="true"><use href="#i-starf"/></svg> <span data-i18n="favs">My Favourite Stops</span></h3>
+      <div id="favList"></div>
+    </div>
+
+    <div class="card homeRoutes">
+      <h3 data-i18n="allroutes">All Routes</h3>
+      <div id="homeRoutes"></div>
+    </div>
+
+    <p class="homeFoot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> <span data-i18n="helpline">Helpline</span>: <a href="tel:1762"><b>1762</b></a> &nbsp;•&nbsp; <span data-i18n="source">Data: eTransit Punjab (PMA) public route planner — checked daily</span></p>
+  </section>
+
+  <!-- ROUTES -->
+  <section id="view-routes" class="view">
+    <div id="routesList"></div>
+    <div id="routeDetail" hidden></div>
+  </section>
+
+  <!-- STOP -->
+  <section id="view-stop" class="view">
+    <div id="stopDetail"></div>
+  </section>
+
+  <!-- PLANNER -->
+  <section id="view-planner" class="view">
+    <div class="card">
+      <h2 data-i18n="planner">Journey Planner</h2>
+      <label data-i18n="from">From</label>
+      <input id="planFrom" readonly placeholder="Tap and choose your stop" data-i18n-ph="planFromPh">
+      <label data-i18n="to">To</label>
+      <input id="planTo" readonly placeholder="Tap and choose your destination" data-i18n-ph="planToPh">
+      <label data-i18n="planTimeLbl">Leaving at (empty = right now)</label>
+      <div class="planTimeRow"><input type="time" id="planTime"><button class="nowChip" id="planNow" data-i18n="planNowBtn">Now</button></div>
+      <button class="big" id="planGo" data-i18n="findbus">Find Bus</button>
+      <div id="planResult"></div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section id="view-reports" class="view">
+    <div class="card">
+      <h2 data-i18n="rep_h"><svg class="ic" aria-hidden="true"><use href="#i-mega"/></svg> Community Reports</h2>
+      <p class="mini" data-i18n="rep_intro">Bus running late? Did not arrive? Overcrowded? File a report so other passengers know. Reports are saved on this phone for now — once the community server launches, everyone's reports will appear in one place. You can also share a report on WhatsApp.</p>
+      <label data-i18n="rep_route_l">Route</label>
+      <div class="chipPick" id="repRoutePick"></div>
+      <label id="repDirLbl" data-i18n="rep_dir_l">Direction</label>
+      <div class="chipPick" id="repDirPick"></div>
+      <label data-i18n="rep_type_l">What do you want to report?</label>
+      <div class="chipPick" id="repTypePick"></div>
+      <label data-i18n="rep_stop_l">Stop</label>
+      <input id="repStop" readonly placeholder="Nearest stop auto-selected — tap to change" data-i18n-ph="repStopPh">
+      <label data-i18n="rep_note_l">Note (optional)</label>
+      <div class="chipPick" id="repNotePick"></div>
+      <button class="big" id="repGo" data-i18n="rep_btn">Submit Report</button>
+    </div>
+    <div class="card">
+      <h3 data-i18n="rep_today">Today's Reports</h3>
+      <div id="repList"></div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section id="view-guide" class="view">
+    <div class="card">
+      <h2 data-i18n="guide_h">T-Cash Card Guide</h2>
+      <h3 data-i18n="g_apply_h">How to get the card?</h3>
+      <div id="guideSteps"></div>
+      <h3 data-i18n="g_fee_h">What is the fee?</h3>
+      <p data-i18n="g_fee">Total Rs 275 = Rs 130 card + Rs 130 delivery + Rs 15 service charges. Pay via BOP app, any bank app/ATM/branch, JazzCash or Easypaisa. Card validity is 5 years.</p>
+      <h3 data-i18n="g_rech_h">How to recharge?</h3>
+      <p data-i18n="g_rech">1) Fund transfer from the BOP Mobile App, or 2) IBFT from any bank — the T-Cash card number is the account number. Standard IBFT charges apply.</p>
+      <h3 data-i18n="g_warn_h"><svg class="ic" aria-hidden="true"><use href="#i-warn"/></svg> Important</h3>
+      <p data-i18n="g_warn">Money in the physical T-Cash Card and the app Virtual Wallet is SEPARATE — it cannot be transferred between them. The Virtual Wallet is free and transit-only; the physical card also works at ATMs/POS.</p>
+      <h3 data-i18n="g_fare_h">What is the bus fare?</h3>
+      <p data-i18n="g_fare">As per the Punjab government e-bus policy (punjab.gov.pk), the fare is a flat Rs 20, and travel is completely FREE for students, senior citizens and special persons.</p>
+    </div>
+    <div class="card small">
+      <a class="callBtn" href="tel:1762" data-i18n="callBtn"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Call Helpline 1762</a>
+      <p data-i18n="disclaimer">This is not an official government app. Timetables are taken from the Punjab Masstransit Authority public portal — for major changes, please confirm on helpline 1762.</p>
+    </div>
+  </section>
+
+  <!-- TERMS OF USE -->
+  <section id="view-terms" class="view">
+    <div class="card legalCard">
+      <h2 data-i18n="termsH">Terms of Use</h2>
+      <h3 data-i18n="termsS1h"></h3><p data-i18n="termsS1b"></p>
+      <h3 data-i18n="termsS2h"></h3><p data-i18n="termsS2b"></p>
+      <h3 data-i18n="termsS3h"></h3><p data-i18n="termsS3b"></p>
+      <h3 data-i18n="termsS4h"></h3><p data-i18n="termsS4b"></p>
+      <h3 data-i18n="termsS5h"></h3><p data-i18n="termsS5b"></p>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section id="view-privacy" class="view">
+    <div class="card legalCard">
+      <h2 data-i18n="privH">Privacy Policy</h2>
+      <p class="legalIntro" data-i18n="privIntro"></p>
+      <h3 data-i18n="privS1h"></h3><p data-i18n="privS1b"></p>
+      <h3 data-i18n="privS2h"></h3><p data-i18n="privS2b"></p>
+      <h3 data-i18n="privS3h"></h3><p data-i18n="privS3b"></p>
+      <h3 data-i18n="privS4h"></h3><p data-i18n="privS4b"></p>
+      <h3 data-i18n="privS5h"></h3><p data-i18n="privS5b"></p>
+      <h3 data-i18n="privS6h"></h3><p data-i18n="privS6b"></p>
+    </div>
+  </section>
+
+  <section id="view-settings" class="view">
+    <div class="setGroup">
+      <p class="setGroupH" data-i18n="set_lang_h">Language</p>
+      <div class="setLang">
+        <button class="setLangBtn" data-setlang="en"><b>English</b><span>See the next bus from your nearest stop</span></button>
+        <button class="setLangBtn" data-setlang="ur"><b>اردو</b><span>اپنے قریب ترین اسٹاپ سے اگلی بس دیکھیں</span></button>
+        <button class="setLangBtn" data-setlang="rom"><b>Roman Urdu</b><span>Apne qareeb tareen stop se agli bus dekho</span></button>
+      </div>
+    </div>
+    <div class="setGroup">
+      <p class="setGroupH" data-i18n="set_app_h">App</p>
+      <button class="setRow" id="setInstall"><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-dlphone"/></svg></span><span class="setRowTx"><b data-i18n="set_install_t">Install App</b><span data-i18n="set_install_note"></span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+      <button class="setRow" id="setShare" hidden><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-share"/></svg></span><span class="setRowTx"><b data-i18n="set_share_t">Share App</b><span data-i18n="set_share_note"></span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+      <button class="setRow" id="setCheckUpdate" hidden><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg></span><span class="setRowTx"><b data-i18n="set_update_t">Check for Updates</b><span data-i18n="set_update_note"></span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+      <button class="setRow" data-go="guide"><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-card"/></svg></span><span class="setRowTx"><b data-i18n="guide_h">T-Cash Card Guide</b><span data-i18n="set_tc_note">How to apply, fees and recharge — the complete guide.</span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+      <a class="setRow" href="tel:1762"><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="setRowTx"><b data-i18n="callRowT">Call Helpline</b><span>1762</span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></a>
+    </div>
+    <div class="setGroup">
+      <p class="setGroupH" data-i18n="legalH">Legal</p>
+      <button class="setRow" data-go="terms"><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span><span class="setRowTx"><b data-i18n="termsT">Terms of Use</b><span data-i18n="termsNote"></span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+      <button class="setRow" data-go="privacy"><span class="setRowIc"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><span class="setRowTx"><b data-i18n="privT">Privacy Policy</b><span data-i18n="privNote"></span></span><span class="setChev"><svg class="ic icChev" aria-hidden="true"><use href="#i-chev"/></svg></span></button>
+    </div>
+    <div class="setGroup">
+      <p class="setGroupH" data-i18n="set_about_h">About</p>
+      <div class="setAbout">
+        <p class="mini" data-i18n="set_about_1"></p>
+        <p class="mini" data-i18n="set_about_2"></p>
+      </div>
+      <div class="setMetaRow"><span data-i18n="verLbl">Version</span><b id="setVer">v1.1</b></div>
+      <div class="setMetaRow"><span data-i18n="srcLbl">Data source</span><b>eTransit Punjab (PMA)</b></div>
+    </div>
+    <p class="verFoot">RYK Electric Bus · v1.1</p>
+  </section>
+</main>
+
+<nav>
+  <button data-view="home" class="active"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="n_home">Home</span></button>
+  <button data-view="routes"><svg class="ic" aria-hidden="true"><use href="#i-routes"/></svg><span data-i18n="n_routes">Routes</span></button>
+  <button data-view="planner"><svg class="ic" aria-hidden="true"><use href="#i-planner"/></svg><span data-i18n="n_plan">Planner</span></button>
+  <button data-view="reports"><svg class="ic" aria-hidden="true"><use href="#i-mega"/></svg><span data-i18n="n_reports">Reports</span></button>
+  <button data-view="settings"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg><span data-i18n="n_set">Settings</span></button>
+</nav>
+<div id="journeyBar" hidden></div>
+
+<div id="stopPicker" hidden>
+  <div class="pkHead"><button id="pkBack"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button><h3 id="pkTitle">Choose stop</h3></div>
+  <div class="pkSearchWrap"><input id="pkSearch" data-i18n-ph="pk_search_ph" placeholder="Search stop name..."></div>
+  <div id="pkList"></div>
+</div>
+<div id="toast" hidden></div>
+<div id="langPick" hidden><div class="lpCard"><div class="lpBus"><img src="app-icon.svg" alt="RYK Bus logo" width="64" height="64"></div><h2>RYK Bus</h2><p class="lpSub">Choose your language · اپنی زبان چنیں · Apni zuban chuno</p><button data-pick="en"><b>English</b><span>Bus timings in English</span></button><button data-pick="ur"><b>اردو</b><span>بس کے اوقات اردو میں</span></button><button data-pick="rom"><b>Roman Urdu</b><span>Bus ke times Roman Urdu me</span></button></div></div>
+<div id="discPop" hidden><div class="discCard"><div class="discHead"><img src="app-icon.svg" alt="RYK Bus logo" width="512" height="512"><h3 id="discT"></h3></div><p id="discB"></p><button id="discOk" class="favBtn"></button></div></div>
+  <div id="msgPop" hidden><div class="discCard msgCard"><div class="discHead"><span class="msgIco"><svg class="ic" aria-hidden="true"><use href="#i-mega"/></svg></span><h3 id="msgT" dir="auto"></h3></div><p id="msgB" dir="auto"></p><button id="msgOk" class="favBtn" dir="auto"></button></div></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+<script>
+(function(){function startBus(force){var b=document.querySelector('.heroBusWrap');if(!b)return false;if(force){b.classList.remove('go');void b.offsetWidth;}b.classList.add('go');return true;}window.__busReplay=function(){startBus(true);};document.addEventListener('click',function(e){if(e.target&&e.target.closest&&e.target.closest('#gpsIconBtn')){setTimeout(function(){startBus(true);},400);}});var started=false;function tryGo(){if(started)return;var sp=document.getElementById('splash');var revealed=!sp||sp.classList.contains('spl-out');if(!revealed)return;var dlg=document.querySelector('#discPop,#msgPop,.dlgWrap,.dlg');if(dlg&&!dlg.hidden&&dlg.offsetParent!==null)return;if(!startBus(false))return;started=true;clearInterval(iv);}var iv=setInterval(tryGo,180);setTimeout(function(){clearInterval(iv);if(!started){started=true;startBus(false);}},9000);})();
+</script>
+</body>
+</html>
