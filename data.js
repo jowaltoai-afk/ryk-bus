@@ -1,5 +1,5 @@
-/*dataVersion:13|dataDate:2026-10-31*/
-// RYK Electric Bus data — source: eTransit Punjab public route planner (city=78), verified 2026-10-31
+/*dataVersion:13|dataDate:2026-11-01*/
+// RYK Electric Bus data — source: eTransit Punjab public route planner (city=78), verified 2026-11-01
 // Har direction: stops = [naam, pehli trip ka time "HH:MM"], trips = kul trips, headway = har kitne minute baad bus
 const ROUTES = [
 {
