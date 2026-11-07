@@ -1,0 +1,11 @@
+{
+  "apkUrl": "https://rykbus.dpdns.org/RYK-Electric-Bus-v1.11.apk",
+  "minVersionCode": 37,
+  "notes": {
+    "en": "Native app is here — faster, with WhatsApp timetable share and browser-based updates. Your alarms are kept; saved stops, favourites and language reset once — set them again after updating.",
+    "rom": "Native app aa gayi hai — tez, WhatsApp timetable share aur browser update ke saath. Aap ke alarms mehfooz rahenge; saved stops, favourites aur language aik dafa reset honge — update ke baad dobara set kar lein.",
+    "ur": "نیٹو ایپ آ گئی ہے — تیز، واٹس ایپ ٹائم ٹیبل شیئر اور براؤزر اپ ڈیٹ کے ساتھ۔ آپ کے الارم محفوظ رہیں گے؛ محفوظ سٹاپ، پسندیدہ اور زبان ایک دفعہ ری سیٹ ہوں گے — اپ ڈیٹ کے بعد دوبارہ سیٹ کر لیں۔"
+  },
+  "versionCode": 37,
+  "versionName": "1.11"
+}
